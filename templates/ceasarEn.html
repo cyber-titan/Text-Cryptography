@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ceasar Cipher</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.2/tailwind.min.css">
+	<link rel="icon" href="/static/favicon1.ico" type="image/icon">
+	<style>
+        body {
+            background-image: url('/static/image.jpg');
+            background-size: cover; background-repeat: no-repeat; background-position: left;
+        }
+    </style>
+</head>
+
+<body>
+	<br><br>
+	<h1 style="color: white; background-color: black;  margin-left: 600px; 
+	margin-right: 600px; border-radius: 7px;" 
+	align="center" class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">CEASAR CIPHER</h1>
+	
+	<a style="margin-left: 100px; text-decoration:none; background-color: red; color: white; 
+	border-radius: 5px; padding: 10px;" href="/">Home</a>
+	<a style="margin-left: 1052px; text-decoration:none; background-color: red; color: white; 
+	border-radius: 5px; padding: 10px;" href="ceasarDe">Click To Go To Decryption</a>
+	<!-- Encryption -->
+	<!-- goto decryption -->
+	<form action="" method="post">
+		<section class="text-gray-600 body-font relative">
+			<div class="container px-5 py-24 mx-auto">
+				<div class="flex flex-col text-center w-full mb-12">
+					<!-- toDecryption anchor id -->
+					<h1
+					style="color: white; background-color:black; margin-left: 655px; width: 170px;
+					border-radius: 5px; opacity: 0.709999999999;"
+					class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Encryption</h1>
+					<p
+					style="color: white; background-color:black; width: 440px; opacity: 0.709999999999;"
+					class="lg:w-2/3 mx-auto leading-relaxed text-base">Lowercase, Uppercase And Spaces Allowed For Input Text.</p>
+				</div>
+				<div class="lg:w-1/2 md:w-2/3 mx-auto">
+					<div class="flex flex-wrap -m-2">
+						<div class="p-2 w-1/2">
+							<div class="relative">
+								<label
+								style="color: white; background-color: black;"
+								class="leading-7 text-sm text-gray-600">Plain Text</label>
+								<input autofocus autocomplete="off" type="text" id="plaintext1" name="plaintext1" 
+									placeholder="Enter Plain Text" spellcheck="false"
+									class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+							</div>
+						</div>
+						<div class="p-2 w-1/2">
+							<div class="relative">
+								<label
+								style="color: white; background-color: black;"
+								class="leading-7 text-sm text-gray-600">Shift Value</label>
+								<input autocomplete="off" type="number" min="0" max="25" id="shiftvalue" name="shiftvalue" 
+                                placeholder="Enter Shift Value" spellcheck="false"
+								class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+							</div>
+						</div>
+						<div class="p-2 w-full">
+							<div class="relative">
+								<label
+								style="color: white; background-color: black;"
+								class="leading-7 text-sm text-gray-600">Cipher Text</label>
+								<textarea autocomplete="off" id="output1" name="output1" spellcheck="false"
+									class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+									>{{ ciphertext1 }}</textarea>
+							</div>
+						</div>
+						<div class="p-2 w-1/2">
+							<div class="relative">
+								<button
+								class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
+								type="submit">Output
+								</button>
+							</div>
+						</div>
+						<div class="p-2 w-1/2">
+							<div class="relative">
+								<button
+								class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg"
+								type="button" onclick="copier()">Copy
+								</button>
+							</div>
+						</div>
+						<!-- line div -->
+						<div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</form>
+</body>
+<script>
+	function copier() {
+	  	const a = document.getElementById("output1");
+	  	a.select();
+		navigator.clipboard.writeText(a.value);
+	}
+</script>
+</html>
